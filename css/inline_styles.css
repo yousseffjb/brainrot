@@ -1,0 +1,179 @@
+
+        :root {
+            --bg-dark: #05000a;
+            --card-bg: rgba(20, 10, 30, 0.75);
+            --border: #d83dff; 
+            --primary: #d83dff;
+            --muted: #a39eb5;
+            --text: #ffffff;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Outfit', sans-serif; }
+
+        body {
+            background-color: var(--bg-dark);
+            background-image: linear-gradient(rgba(5, 0, 10, 0.85), rgba(5, 0, 10, 0.95)), url('https://i.ibb.co/DDgjjwSc/5tallllll.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        /* --- BROWSER BLOCKER --- */
+        #browser-blocker { 
+            position: fixed !important; 
+            inset: 0 !important; 
+            background: var(--bg-dark) !important; 
+            z-index: 99999999 !important; 
+            display: none;
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center; 
+            text-align: center; 
+            padding: 30px; 
+        }
+        .blocker-content { 
+            background: rgba(21, 12, 38, 0.95); 
+            border: 2px solid var(--primary); 
+            box-shadow: 0 0 30px rgba(216, 61, 255, 0.4); 
+            border-radius: 25px; 
+            padding: 30px; 
+            max-width: 400px; 
+        }
+        .blocker-content h3 { color: var(--primary); font-weight: 900; font-size: 24px; margin-bottom: 15px; text-transform: uppercase; }
+        .blocker-image { width: 100%; max-width: 280px; border-radius: 15px; margin-bottom: 20px; }
+
+        /* --- MAIN CONTENT --- */
+        #main-container {
+            background: var(--card-bg); 
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px; 
+            padding: 35px 20px; 
+            width: 100%; 
+            max-width: 500px; 
+            text-align: center; 
+            backdrop-filter: blur(15px);
+            box-shadow: 0 0 40px rgba(0,0,0,0.5);
+        }
+
+        .logo {
+            font-weight: 900; font-size: 32px; margin-bottom: 25px;
+            background: linear-gradient(90deg, #fff, var(--primary));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+        }
+
+        .step-item {
+            background: rgba(255, 255, 255, 0.05); 
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px; 
+            padding: 12px 15px; 
+            margin-bottom: 8px;
+            display: flex; 
+            align-items: center; 
+            text-align: left;
+            font-size: 14px;
+        }
+
+        .step-num {
+            background: var(--primary); 
+            color: #fff; 
+            width: 24px; 
+            height: 24px;
+            border-radius: 50%; 
+            display: flex; 
+            align-items: center; 
+            justify-content: center;
+            font-weight: 900; 
+            margin-right: 12px; 
+            flex-shrink: 0;
+            font-size: 12px;
+        }
+
+        .note-box {
+            background: rgba(255, 42, 42, 0.05); 
+            border: 1px dashed rgba(255, 42, 42, 0.3);
+            border-radius: 12px; 
+            padding: 12px; 
+            margin: 15px 0; 
+            font-size: 12px; 
+            color: #ffbaba;
+        }
+
+        /* --- تنسيق شبكة الصور والأزرار (دائماً جنباً إلى جنب) --- */
+        .options-grid {
+            display: flex;
+            flex-direction: row; 
+            gap: 15px;
+            justify-content: space-between;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .option-card {
+            flex: 1; 
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            width: 50%;
+        }
+
+        .option-image {
+            width: 100%;
+            aspect-ratio: 1/1;
+            object-fit: cover;
+            border-radius: 15px;
+            border: 1px solid rgba(216, 61, 255, 0.3);
+            box-shadow: 0 0 15px rgba(216, 61, 255, 0.2);
+        }
+
+        /* --- تصميم العناوين تحت الصور --- */
+        .option-title {
+            color: #ffffff;
+            font-size: 15px;
+            font-weight: 900;
+            text-transform: uppercase;
+            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+            line-height: 1.2;
+            margin: 2px 0;
+            text-align: center;
+        }
+
+        .go-btn {
+            display: block; 
+            width: 100%; 
+            padding: 15px 5px; 
+            border-radius: 12px;
+            background: linear-gradient(90deg, var(--primary), #a620c7);
+            color: #fff; 
+            font-size: 16px; 
+            font-weight: 900; 
+            text-decoration: none;
+            text-transform: uppercase; 
+            box-shadow: 0 5px 15px rgba(216, 61, 255, 0.3);
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .go-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(216, 61, 255, 0.5);
+        }
+
+        /* تحسين للهواتف الصغيرة مع الحفاظ على الوضع الأفقي */
+        @media (max-width: 480px) {
+            .logo { font-size: 26px; }
+            .options-grid { gap: 10px; } 
+            .option-title { font-size: 12px; } /* تصغير الخط في التليفون باش يجي مقاد */
+            .go-btn { 
+                font-size: 13px; 
+                padding: 12px 2px;
+            }
+        }
+    
